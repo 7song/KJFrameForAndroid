@@ -164,10 +164,11 @@ public class BitmapHelper {
      *            ：纵向缩放比例
      */
     public static Bitmap scale(Bitmap src, float scaleX, float scaleY) {
+        int w = src.getWidth();
+        int h = src.getHeight();
         Matrix matrix = new Matrix();
-        matrix.postScale(scaleX, scaleY);
-        return Bitmap.createBitmap(src, 0, 0, src.getWidth(),
-                src.getHeight(), matrix, true);
+        matrix.postScale(scaleX / w, scaleY / h);
+        return Bitmap.createBitmap(src, 0, 0, w, h, matrix, true);
     }
 
     /**

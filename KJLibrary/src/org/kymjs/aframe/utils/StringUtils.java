@@ -88,8 +88,9 @@ public class StringUtils {
      * @return 转换异常返回 0
      */
     public static int toInt(Object obj) {
-        if (obj == null)
+        if (obj == null) {
             return 0;
+        }
         return toInt(obj.toString(), 0);
     }
 
